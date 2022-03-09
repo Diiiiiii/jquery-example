@@ -21,7 +21,9 @@ function jsExample() {
         element.addEventListener("click", function (event) {
             //Pointer Event je klasičan event
             console.log(event);
-            fetch("./data.json").then((result) => console.log(result));
+            fetch("./data.json")
+            .then(response => response.json())
+            .then(json => console.log(json));
         });
     });
     console.log(titleElement);
